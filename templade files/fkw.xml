@@ -1,0 +1,81 @@
+<wiidisc version="1">
+	<id game="RMC"/>
+	<options>
+		<section name="Formula Kart Wii">
+			<option name="Gecko codes">
+				<choice name="Enabled">
+					<patch id="fkw" />
+				</choice>
+			</option>
+			<option name="My Stuff">
+				<choice name="CTGP">
+					<patch id="mystuffctgp" />
+				</choice>
+				<choice name="CTGP (Music Only)">
+					<patch id="mystuffctgpnrt" />
+				</choice>
+				<choice name="FKW">
+					<patch id="mystufffkw" />
+				</choice>
+				<choice name="FKW (Music Only)">
+					<patch id="mystufffkwnrt" />
+				</choice>
+			</option>
+		</section>
+	</options>
+	<patch id="fkw">
+		<!--Load Code-->
+		<memory valuefile="/fkw/Loader{$__region}.bin" offset="0x80258700"/>
+		<memory offset="0x8000629C" value="48252FB0"/>
+		<folder external="/fkw/codes" disc="/codes" create="true"/>
+		<!--File Replacements-->
+		<file disc="/Race/Common_U.szs" external="/fkw/Common_X/Common_E.szs" />
+		<file disc="/Race/Common_Q.szs" external="/fkw/Common_X/Common_F.szs" />
+		<file disc="/Race/Common_M.szs" external="/fkw/Common_X/Common_S.szs" />
+		<folder disc="/Race" external="/fkw/Common_X" />
+		<folder disc="/Race/Course" external="/fkw/TrackPatches" create="true" />
+		<folder disc="/Scene/UI" external="/fkw/Race_X" />
+		<folder disc="/Scene/UI" external="/fkw/Title_X" />
+	</patch>
+	<patch id="mystuffctgp">
+		<folder external="/ctgpr/My Stuff" recursive="false" />
+		<folder external="/ctgpr/My Stuff" disc="/" />
+	</patch>
+	<patch id="mystuffctgpnrt">
+		<folder external="/ctgpr/My Stuff" recursive="false" disc="/sound" />
+		<folder external="/ctgpr/My Stuff" recursive="false" disc="/sound/strm" />
+	</patch>
+	<patch id="mystufffkw">
+		<folder external="/fkw/My Stuff" recursive="false" />
+		<folder external="/fkw/My Stuff" disc="/" />
+	</patch>
+	<patch id="mystufffkwnrt">
+		<folder external="/fkw/My Stuff" recursive="false" disc="/sound" />
+		<folder external="/fkw/My Stuff" recursive="false" disc="/sound/strm" />
+	</patch>
+	<!--Set bytes to enable the following codes-->
+	<patch id="fastmenu">
+		<memory offset="0x800017B0" value="01"/>
+	</patch>
+	<patch id="miiheads">
+		<memory offset="0x800017B1" value="01"/>
+	</patch>
+	<patch id="nomusic">
+		<memory offset="0x800017B2" value="01"/>
+	</patch>
+	<patch id="btglitch">
+		<memory offset="0x800017B3" value="01"/>
+	</patch>
+	<patch id="nochars">
+		<memory offset="0x800017B4" value="01"/>
+	</patch>
+	<patch id="voting">
+		<memory offset="0x800017B5" value="01"/>
+	</patch>
+	<patch id="timediff1">
+		<memory offset="0x800017B6" value="01"/>
+	</patch>
+	<patch id="timediff2">
+		<memory offset="0x800017B6" value="02"/>
+	</patch>
+</wiidisc>
