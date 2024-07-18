@@ -14,6 +14,11 @@ The loader is easy to use, only requires Riivolution and a SD Card or USB
 
 Support newwfc server, altwfc server, wiilink WFC server and wiimmfi 
 
+---
+
+Version 1.0
+ Fisrt Release
+
 
 My stuff are programed with 3 folder, newwfc (aka the mains folder [DONT ERRASE]) CTGP-R and FKW
 
